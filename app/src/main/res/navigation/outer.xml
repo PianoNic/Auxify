@@ -39,6 +39,12 @@
         <action
             android:id="@+id/spotify_login"
             app:destination="@id/login_fragment" />
+        <action
+            android:id="@+id/spotify_library"
+            app:destination="@id/spotify_library_fragment" />
+        <action
+            android:id="@+id/sync_dashboard"
+            app:destination="@id/sync_dashboard_fragment" />
     </fragment>
 
     <fragment
@@ -113,4 +119,14 @@
         android:id="@+id/login_fragment"
         android:name="org.oxycblt.auxio.spotify.LoginFragment"
         android:label="login_fragment" />
+
+    <fragment
+        android:id="@+id/spotify_library_fragment"
+        android:name="org.oxycblt.auxio.spotify.SpotifyLibraryFragment"
+        android:label="spotify_library_fragment" />
+
+    <fragment
+        android:id="@+id/sync_dashboard_fragment"
+        android:name="org.oxycblt.auxio.sync.SyncDashboardFragment"
+        android:label="sync_dashboard_fragment" />
 </navigation>

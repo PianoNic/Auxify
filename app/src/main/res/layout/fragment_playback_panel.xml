@@ -66,8 +66,8 @@
         android:id="@+id/playback_controls_wrapper"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_mid_medium"
-        android:layout_marginEnd="@dimen/spacing_mid_medium"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:layout_marginEnd="@dimen/spacing_small"
         app:layout_constraintBottom_toBottomOf="@+id/playback_cover"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -77,7 +77,7 @@
     <com.google.android.material.button.MaterialButtonGroup
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:spacing="@dimen/spacing_tiny">
+        android:spacing="@dimen/spacing_small">
 
 
             <org.oxycblt.auxio.ui.WidthFixMaterialButton
@@ -93,7 +93,7 @@
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:materialSizeOverlay="@style/SizeOverlay.Material3Expressive.Button.IconButton.Xsmall" />
+                app:materialSizeOverlay="@style/SizeOverlay.Material3Expressive.Button.IconButton.Small.Narrow" />
 
             <org.oxycblt.auxio.ui.RippleFixMaterialButton
                 android:id="@+id/playback_skip_prev"
@@ -151,7 +151,7 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/playback_skip_next"
                 app:layout_constraintTop_toTopOf="parent"
-                app:materialSizeOverlay="@style/SizeOverlay.Material3Expressive.Button.IconButton.Xsmall"
+                app:materialSizeOverlay="@style/SizeOverlay.Material3Expressive.Button.IconButton.Small.Narrow"
                 app:tint="@color/sel_activatable_icon" />
 
         </com.google.android.material.button.MaterialButtonGroup>

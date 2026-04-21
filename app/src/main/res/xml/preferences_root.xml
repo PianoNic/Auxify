@@ -26,6 +26,35 @@
         app:summary="@string/set_audio_desc"
         app:title="@string/set_audio" />
 
+    <PreferenceCategory app:title="@string/set_spotify">
+
+        <Preference
+            app:key="@string/set_key_spotify_login"
+            app:summary="@string/set_spotify_login_desc"
+            app:title="@string/set_spotify_login" />
+
+        <Preference
+            app:key="@string/set_key_spotify_logout"
+            app:summary="@string/set_spotify_logout_desc"
+            app:title="@string/set_spotify_logout" />
+
+        <Preference
+            app:key="@string/set_key_spotify_library"
+            app:summary="@string/set_spotify_library_desc"
+            app:title="@string/set_spotify_library" />
+
+        <Preference
+            app:key="@string/set_key_sync_dashboard"
+            app:summary="@string/set_sync_dashboard_desc"
+            app:title="@string/set_sync_dashboard" />
+
+        <Preference
+            app:key="@string/set_key_sync_now"
+            app:summary="@string/set_sync_now_desc"
+            app:title="@string/set_sync_now" />
+
+    </PreferenceCategory>
+
     <PreferenceCategory app:title="@string/set_library">
 
         <org.oxycblt.auxio.settings.ui.WrappedDialogPreference

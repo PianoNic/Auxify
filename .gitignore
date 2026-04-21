@@ -24,3 +24,6 @@ app/libs/KotifyClient*.jar
 sessions.json
 *.keystore
 *.jks
+*.apk
+*.png
+ui_dump*.xml

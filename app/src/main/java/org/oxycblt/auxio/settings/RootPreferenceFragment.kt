@@ -29,6 +29,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import org.oxycblt.auxio.R
 import org.oxycblt.auxio.music.MusicViewModel
 import org.oxycblt.auxio.settings.ui.WrappedDialogPreference
+import org.oxycblt.auxio.spotify.SpotifySession
+import org.oxycblt.auxio.spotify.clearCookies
+import org.oxycblt.auxio.sync.SyncWorker
 import org.oxycblt.auxio.util.navigateSafe
 import timber.log.Timber as L
 
@@ -48,6 +51,31 @@ class RootPreferenceFragment : BasePreferenceFragment(R.xml.preferences_root) {
         returnTransition = MaterialFadeThrough()
         exitTransition = MaterialFadeThrough()
         reenterTransition = MaterialSharedAxis(MaterialSharedAxis.X, false)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateSpotifyPreferences()
+    }
+
+    private fun updateSpotifyPreferences() {
+        val loggedIn = SpotifySession.isLoggedIn
+        findPreference<Preference>(getString(R.string.set_key_spotify_login))?.apply {
+            isVisible = !loggedIn
+        }
+        findPreference<Preference>(getString(R.string.set_key_spotify_logout))?.apply {
+            isVisible = loggedIn
+            summary = if (loggedIn) getString(R.string.set_spotify_logged_in) else ""
+        }
+        findPreference<Preference>(getString(R.string.set_key_sync_now))?.apply {
+            isVisible = loggedIn
+        }
+        findPreference<Preference>(getString(R.string.set_key_spotify_library))?.apply {
+            isVisible = loggedIn
+        }
+        findPreference<Preference>(getString(R.string.set_key_sync_dashboard))?.apply {
+            isVisible = loggedIn
+        }
     }
 
     override fun onOpenDialogPreference(preference: WrappedDialogPreference) {
@@ -84,6 +112,27 @@ class RootPreferenceFragment : BasePreferenceFragment(R.xml.preferences_root) {
             }
             getString(R.string.set_key_reindex) -> musicModel.refresh()
             getString(R.string.set_key_rescan) -> musicModel.rescan()
+            getString(R.string.set_key_spotify_login) -> {
+                L.d("Navigating to Spotify login")
+                findNavController().navigateSafe(RootPreferenceFragmentDirections.spotifyLogin())
+            }
+            getString(R.string.set_key_spotify_logout) -> {
+                L.d("Logging out of Spotify")
+                SpotifySession.logout(requireContext())
+                updateSpotifyPreferences()
+            }
+            getString(R.string.set_key_sync_now) -> {
+                L.d("Triggering sync now")
+                SyncWorker.syncNow(requireContext())
+            }
+            getString(R.string.set_key_spotify_library) -> {
+                L.d("Navigating to Spotify library")
+                findNavController().navigateSafe(RootPreferenceFragmentDirections.spotifyLibrary())
+            }
+            getString(R.string.set_key_sync_dashboard) -> {
+                L.d("Navigating to sync dashboard")
+                findNavController().navigateSafe(RootPreferenceFragmentDirections.syncDashboard())
+            }
             else -> return super.onPreferenceTreeClick(preference)
         }
 

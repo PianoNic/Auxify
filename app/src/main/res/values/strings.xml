@@ -343,6 +343,19 @@
     <string name="set_rescan">Rescan music</string>
     <string name="set_rescan_desc">Clear the tag cache and fully reload the music library (slower, but more complete)</string>
 
+    <string name="set_spotify">Spotify</string>
+    <string name="set_spotify_login">Login to Spotify</string>
+    <string name="set_spotify_login_desc">Connect your Spotify account to sync playlists</string>
+    <string name="set_spotify_logout">Logout</string>
+    <string name="set_spotify_logout_desc">Disconnect your Spotify account</string>
+    <string name="set_spotify_logged_in">Logged in</string>
+    <string name="set_sync_now">Sync now</string>
+    <string name="set_sync_now_desc">Download pending tracks immediately</string>
+    <string name="set_spotify_library">Browse Library</string>
+    <string name="set_spotify_library_desc">Choose playlists and albums to sync</string>
+    <string name="set_sync_dashboard">Sync Overview</string>
+    <string name="set_sync_dashboard_desc">See download progress and manage subscriptions</string>
+
     <!-- Error Namespace | Error Labels -->
     <string name="err_index_failed">Music loading failed</string>
     <string name="err_import_failed">Unable to import a playlist from this file</string>

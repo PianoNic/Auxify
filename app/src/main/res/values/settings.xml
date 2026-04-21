@@ -12,6 +12,12 @@
 
     <string name="set_key_reindex" translatable="false">auxio_reindex</string>
     <string name="set_key_rescan" translatable="false">auxio_rescan</string>
+
+    <string name="set_key_spotify_login" translatable="false">auxify_spotify_login</string>
+    <string name="set_key_spotify_logout" translatable="false">auxify_spotify_logout</string>
+    <string name="set_key_sync_now" translatable="false">auxify_sync_now</string>
+    <string name="set_key_spotify_library" translatable="false">auxify_spotify_library</string>
+    <string name="set_key_sync_dashboard" translatable="false">auxify_sync_dashboard</string>
     <string name="set_key_observing" translatable="false">auxio_observing</string>
     <string name="set_key_music_dirs" translatable="false">auxio_music_dirs</string>
     <string name="set_key_excluded_dirs" translatable="false">auxio_excluded_dirs</string>
