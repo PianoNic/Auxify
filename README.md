@@ -5,7 +5,7 @@
 <h1 align="center">Auxify</h1>
 
 <p align="center">
-  <strong>Subscribe. Sync. Listen offline. Your music, your way.</strong>
+  <strong>Subscribe. Sync. Listen offline.</strong>
 </p>
 
 <p align="center">
